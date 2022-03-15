@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+    font-family: $mainFont;
+}
+.containerContac{
+    background-color: $fondoClaro;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.fomularioContenedor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.containerContac::before{
+    content: '';
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    right: 48%;
+    background-image: linear-gradient(-45deg, $color 0%, #69182e 100%);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem ;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: 0.2s 0.7s ease-in-out;
+}   
+
+.titulo{
+    font-size: 2.2rem;
+    color: $tprincipal;
+    margin-bottom: 10px;
+    color: $color;
+    font-weight: 700;
+}
+
+.inputTexto{
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: $tprincipal;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.inputTexto i{
+    text-align: center;
+    line-height: 55px;
+    color: #999;
+    font-size: 1.5rem;
+    background: none;
+    
+}
+
+.inputTexto input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1 ;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.inputTexto input::placeholder{
+    color: #999;
+    font-weight: 500;
+}
+
+#btnLogin #btnRegistro{
+    width: 150px;
+    height: 49px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0 ;
+    transition: all .5s;
+}
+
+#btnLogin:hover{
+    background-color: #69182e;
+}
+
+#btnRegistro:hover{
+    background-color: #69182e;
+}
+
+.inicioIngreso{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr ;
+    z-index: 5;
+    transition: 1s 0.7s ease-in-out;
+
+}
+.inicioRegistro{
+    position: absolute;
+    top: 50%;
+    right: 75%;
+    transform: translate(50%, -65%);
+    display: grid;
+    grid-template-columns: 1fr ;
+    z-index: 5;
+
+}
+.contenido h3{
+    color: #fff;
+}
+form.inicioForm{
+    z-index: 2;
+}
+.button2{
+    color: $tprincipal;
+    background-color: $fondoClaro;
+    font-weight: 600;
+
+}
+form.registroForm{
+    z-index: 1;
+    opacity: 0;
+}
+
+.panelesContenedores{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 7;
+}
+
+.panelIzq{
+    pointer-events: all;
+    padding: 3rem 17% 2rem 12%;
+}
+
+.panelDer{
+    pointer-events: none;
+    padding: 3rem 12% 2rem 17%;
+}
+
+.panel .contenido {
+    color: #fff;
+    transition: .9s .6s ease-in-out ;
+}
+
+.panel h3{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+    
+}
+
+/*animaciones*/
+.containerContac.modoRegistro::before{
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+
+.panelDer .contenido{
+    transform: translateX(800px);
+}
+
+.containerContac.modoRegistro .panelIzq .contenido{
+    transform: translateX(-800px);
+}
+
+.containerContac.modoRegistro .panelDer .contenido{
+    transform: translateX(0%);
+}
+
+.containerContac.modoRegistro .panelIzq {
+    pointer-events: none;
+}
+
+.containerContac.modoRegistro .panelDer {
+    
+    pointer-events: all;
+}
+
+.containerContac.modoRegistro .inicioIngreso{
+    left: 25%;
+}
+
+.containerContac.modoRegistro form.inicioForm{
+    z-index: 1;
+    opacity: 0;
+}
+.containerContac.modoRegistro form.registroForm{
+    z-index: 2;
+    opacity: 1;
+}
