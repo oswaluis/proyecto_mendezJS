@@ -156,6 +156,9 @@ let mensaje = document.getElementById("mensajeCompra")
 
 let btnComprar = document.getElementById("btnComprar")
 btnComprar.addEventListener("click",()=>{
+	carrito.innerHTML = ''
+	carritoDeCompras = []
+	actCarrito()
 	localStorage.clear()
 	console.log("Felicitaciones ud ha comprado")
 
